@@ -1,0 +1,12 @@
+import requests
+
+url = "https://mcp-apmo.sidgsw-tooling-dev.sidg-clo.siemens.cloud:8011/mcp/apmo/jira/rest/api/2/search"
+query = {
+    "jql": "project=SOLSD AND status=Open AND assignee=currentUser()"
+}
+headers = {
+    "Jira-Authorization": "Token Mzk3MDU0NTE3NzUwOpGdIsi92K/nroBAB3ROZ+6uR60y"
+}
+
+response = requests.get(url, params=query, headers=headers)
+print(response.json())
